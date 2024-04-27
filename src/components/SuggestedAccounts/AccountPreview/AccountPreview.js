@@ -1,0 +1,39 @@
+import classNames from "classnames/bind";
+import styles from "./AccountPreview.module.scss";
+import Button from "~/components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import images from "~/assets/images";
+// import PropTypes from "prop-types";
+
+const cx = classNames.bind(styles);
+
+function AccountPreview() {
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('header')}>
+                <img
+                    className={cx('avatar')}
+                    src={images.logo}
+                    alt="BixTuyen"
+                />
+                <Button primary className={cx('follow-btn')}>Follow</Button>
+            </div>
+            <div className={cx('body')}>
+                <h4 className={cx('nickname')}>
+                    <strong>Anyone Account</strong>
+                    <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                </h4>
+                <p className={cx('name')}>Anyone nickname</p>
+                <p className={cx('analytic')}>
+                    <strong className={cx('value')}>8.2M </strong>
+                    <span className={cx('label')}>Followers</span>
+                    <strong className={cx('value')}>8.2M </strong>
+                    <span className={cx('label')}>Likes</span>
+                </p>
+            </div>
+        </div>
+    );
+}
+
+export default AccountPreview;
